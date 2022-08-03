@@ -1,5 +1,5 @@
-import React, { useState } from 'react';
-import { Link } from "react-router-dom";
+import React from 'react';
+import { Link } from 'react-router-dom';
 
 export default function Navbar() {
     
@@ -13,7 +13,7 @@ export default function Navbar() {
     //     ),
     // };
     return (
-        <nav className="navbar navbar-expand-lg mb-5">
+        <nav className="navbar navbar-expand-lg">
             <div className="container-fluid">
                 <Link to="/" style={{textDecoration: "none", color: "black", marginRight: "25pt", alignSelf: "center"}}>
                     <h4> Employee Directory </h4>
@@ -37,10 +37,6 @@ export default function Navbar() {
                             {/* <a className="nav-link" href="#">Add Employee</a> */}
                         </li>
                     </ul>
-                    <form className="d-flex" role="search">
-                        <input className="form-control me-2" type="search" placeholder="Search" aria-label="Search" id='search'/>
-                            <button className="btn btn-outline-success" type="submit">Search</button>
-                    </form>
                 </div>
             </div>
         </nav>
