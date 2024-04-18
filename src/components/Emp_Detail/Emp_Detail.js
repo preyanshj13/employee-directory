@@ -45,7 +45,7 @@ export default function Emp_Detail() {
             .get(`http://localhost:3000/employee/${id}`)
             .then((res) => {
                 // console.log(res.data);
-                setEmp_data(res.data);
+                setEmp_data(res.data)
                 setName(res.data.name)
                 setNumber(res.data.number)
                 setEmail(res.data.email)

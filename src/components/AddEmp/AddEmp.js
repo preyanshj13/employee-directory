@@ -1,4 +1,5 @@
 import React, {useState} from 'react';
+import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import './AddEmp.css';
 // import { BrowserRouter as Router, Switch, Route, Link, Redirect} from "react-router-dom";
@@ -13,6 +14,7 @@ export default function AddEmp() {
     // const [lastName, setLastName] = useState('')
     const [domain, setDomain] = useState('')
     const image = useState("http://dummyimage.com/100x100.png/ff4444/ffffff")
+    const navigate = useNavigate();
 
     const postData = () => {
 
@@ -22,6 +24,7 @@ export default function AddEmp() {
 
         else(axios.post('http://localhost:3000/employee',{id, name, domain, number, email, address, date, image})
             .then(console.log('data posted!'))
+            .then(navigate('/'))
         )
             // <Redirect to="/" />
             

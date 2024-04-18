@@ -6,7 +6,7 @@ import swal from 'sweetalert';
 
 export default function ViewEmp() {
     const [data, setData] = useState([]);
-    const [temp, setTemp] = useState([])
+    // const [temp, setTemp] = useState([])
 
     // axios.get('http://localhost:3000/employee').then(res => setData(res.data))
     useEffect(() => {
@@ -15,7 +15,7 @@ export default function ViewEmp() {
             .then((res) => {
                 // console.log(res.data);
                 setData(res.data);
-                setTemp(res.data);
+                // setTemp(res.data);
             })
             .catch((error) => {
                 console.log(error);
@@ -66,25 +66,25 @@ export default function ViewEmp() {
     // let filteredEmployees = filtered.length === 0 ? data : data.filter(
     //     item => (item.domain.toLowerCase()===filtered.toLowerCase()))
 
-    const filterEmp = (val) => {
-        let filteredEmployees =  val.target.value.length === 0 ? temp : data.filter(
-            (item) => item.domain.toLowerCase()===val.target.value.toLowerCase());
-        setData(filteredEmployees);
-    }
+    // const filterEmp = (val) => {
+    //     let filteredEmployees =  val.target.value.length === 0 ? temp : data.filter(
+    //         (item) => item.domain.toLowerCase()===val.target.value.toLowerCase());
+    //     setData(filteredEmployees);
+    // }
 
     // THE ISSUE OCCURING IS THAT THE MAIN DATA IS GETTING MANIPULATED AFTER EVERY RUN SO I THINK WE WOULD HAVE TO FIND A WAY TO NOT HAMPER WITH THAT
 
     // const [search, setSearch] = useState('')
-    const searchEmp = (val) => {
-        let searchedEmployees = val.target.value.length === 0 ? temp : data.filter(
-            (item) => item.name.toLowerCase().includes(val.target.value.toLowerCase()));
-        setData(searchedEmployees);
-    }
+    // const searchEmp = (val) => {
+    //     let searchedEmployees = val.target.value.length === 0 ? temp : data.filter(
+    //         (item) => item.name.toLowerCase().includes(val.target.value.toLowerCase()));
+    //     setData(searchedEmployees);
+    // }
 
     // search employee bar
-    // const [search, setSearch] = useState('')
-    // let searchedEmployees = search.length === 0 ? data : data.filter(
-    //     item => (item.name.toLowerCase()===search.toLowerCase()))
+    const [search, setSearch] = useState('')
+    let searchEmp = search.length === 0 ? data : data.filter(
+        item => item.name.toLowerCase().includes(search.toLowerCase()))
 
 
     // console.log(data.id)
@@ -107,7 +107,7 @@ export default function ViewEmp() {
                 </div> */}
 
             <form className="searchBox mb-5" role="search">
-                <div>
+                {/* <div>
                     <select className="form-select" aria-label="filterButton" onChange={filterEmp}>
                         <option selected disabled defaultValue>Filter</option>
                         <option value="Human Resource">Human Resource</option>
@@ -118,9 +118,9 @@ export default function ViewEmp() {
                         <option value="Teacher">Teacher</option>
                         <option value="">None</option>
                     </select>
-                </div>
-                <input className="searchText" type="text" placeholder="Search Employee" id='search' onChange={searchEmp}/>
-                {/* <input className="searchText" type="text" placeholder="Search Employee" id='search' value={search} onChange={(e) => setSearch(e.target.value)}/> */}
+                </div> */}
+                {/* <input className="searchText" type="text" placeholder="Search Employee" id='search' onChange={searchEmp}/> */}
+                <input className="searchText" type="text" placeholder="Search Employee" id='search' value={search} onChange={(e) => setSearch(e.target.value)}/>
             </form>
         </div>
 
@@ -128,7 +128,7 @@ export default function ViewEmp() {
 
         <div className="container">
             <div className="row">
-                {data.map(item => (
+                {searchEmp.map(item => (
                 <div className="card col-md-4 " key={item.id}>
                     <img className="card-img-top" src={`${item.image}`} alt="Employee"/>
                     <div className="card-body">
