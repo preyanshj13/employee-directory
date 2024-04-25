@@ -15,11 +15,11 @@ function App() {
         <Navbar />
       <Routes>
         {/* <ViewEmp /> */}
-        <Route exact path="/" element={<ViewEmp/>} />
+        <Route exact path="/employee-directory" element={<ViewEmp/>} />
         {/* <AddEmp /> */}
-        <Route path="/add" element={<AddEmp/>} />
+        <Route path="/employee-directory/add" element={<AddEmp/>} />
         {/* eslint-disable-next-line */}
-        <Route path="/detail/:id" element={<Emp_Detail />} />
+        <Route path="/employee-directory/detail/:id" element={<Emp_Detail />} />
         {/* <Route path="/test/:id" element={Test1} /> */}
         {/* <Route path="abc" element={EmpDetails} /> */}
         </Routes>
