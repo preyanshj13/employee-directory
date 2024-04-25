@@ -11,14 +11,19 @@ export default function ViewEmp() {
     // axios.get('http://localhost:3000/employee').then(res => setData(res.data))
     useEffect(() => {
         axios
-            .get('http://localhost:3000/employee')
+//   "homepage": "https://github.com/preyanshj13/employee_CRUD",
+
+            // .get('http://localhost:3000/employee')
+            // .get("https://api.jsonserve.com/fR4yXb")
+            .get('http://localhost:9000/api/employees')
+
             .then((res) => {
-                // console.log(res.data);
+                console.log(res.data);
                 setData(res.data);
                 // setTemp(res.data);
             })
             .catch((error) => {
-                console.log(error);
+                console.log(error, error.message);
             });
     }, [])
 
@@ -53,8 +58,8 @@ export default function ViewEmp() {
 
     const deleteData = (id) => {
         //Logic to delete the item
-        axios.delete(`http://localhost:3000/employee/${id}`).then(console.log('deleted item'))
-        let newData = [...data].filter((data) => data.id !== id);
+        axios.delete(`http://localhost:9000/api/employees/${id}`).then(console.log('deleted item'))
+        let newData = [...data].filter((data) => data._id !== id);
         setData(newData);
     }
 
@@ -133,7 +138,7 @@ export default function ViewEmp() {
                     <img className="card-img-top" src={`${item.image}`} alt="Employee"/>
                     <div className="card-body">
                         <h5 className="card-title">
-                            <Link style={{textDecoration: 'none'}} to = {`/detail/${item.id}`}>
+                            <Link style={{textDecoration: 'none'}} to = {`/detail/${item._id}`}>
                                 {item.name}
                             </Link>
                         </h5>
@@ -143,7 +148,7 @@ export default function ViewEmp() {
                         <li className="list-group-item"><strong>Domain- </strong>{item.domain}</li>
                     </ul>
                     <div className="card-body">
-                        <button className='btnDel' onClick={() => confirmDelete(item.id)}>Delete</button>
+                        <button className='btnDel' onClick={() => confirmDelete(item._id)}>Delete</button>
                     </div>
                     </div>
                     ))}
