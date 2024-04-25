@@ -15,7 +15,7 @@ export default function Navbar() {
     return (
         <nav className="navbar navbar-expand-lg">
             <div className="container-fluid">
-                <Link to="/" style={{textDecoration: "none", color: "black", marginRight: "25pt", alignSelf: "center"}}>
+                <Link to="/employee-directory" style={{textDecoration: "none", color: "black", marginRight: "25pt", alignSelf: "center"}}>
                     <h4> Employee Directory </h4>
                 </Link>
             {/* <a className="navbar-brand" href="#">Employee Directory</a> */}
@@ -28,12 +28,12 @@ export default function Navbar() {
                     <ul className="navbar-nav me-auto mb-2 mb-lg-0">
                         
                         <li className="nav-item">
-                            <Link to="/" style={{textDecoration: "none", color: "black", marginRight: "15pt"}}>Home</Link>
+                            <Link to="/employee-directory" style={{textDecoration: "none", color: "black", marginRight: "15pt"}}>Home</Link>
                             {/* <a className="nav-link" aria-current="page" href="#">Home</a> */}
                         </li>
                         
                         <li className="nav-item">
-                            <Link to="/add" style={{textDecoration: "none", color: "black"}}>Add Employee</Link>
+                            <Link to="/employee-directory/add" style={{textDecoration: "none", color: "black"}}>Add Employee</Link>
                             {/* <a className="nav-link" href="#">Add Employee</a> */}
                         </li>
                     </ul>

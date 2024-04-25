@@ -35,7 +35,7 @@ export default function AddEmp() {
         })
         // setTimeout(
         .then(
-           setTimeout( navigate('/')),20000);
+           setTimeout( navigate('/employee-directory')),20000);
       // ,1000)
     // <Redirect to="/" />
   };
