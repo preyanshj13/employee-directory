@@ -15,13 +15,15 @@ export default function AddEmp() {
   const [domain, setDomain] = useState('');
   const image = useState('http://dummyimage.com/100x100.png/ff4444/ffffff');
   const navigate = useNavigate();
+  
+  const API = process.env.REACT_APP_API
 
   const postData = () => {
     if (!id || !name || !domain || !number || !email || !address) {
       return alert('All fields are required.');
     } else
       axios
-        .post('http://localhost:9000/api/employees', {
+        .post(API, {
           id,
           name,
           domain,

@@ -12,6 +12,7 @@ export default function Emp_Detail() {
   const [domain, setDomain] = useState('');
   const [ids, setIds] = useState('');
   const image = useState('http://dummyimage.com/100x100.png/ff4444/ffffff');
+  const API = process.env.REACT_APP_API
 
   let { id } = useParams();
   // console.log(id)
@@ -23,7 +24,7 @@ export default function Emp_Detail() {
     // e.preventDefault();
     console.log(id)
     axios
-      .put(`http://localhost:9000/api/employees/${id}`, {
+      .put(`${API}/${id}`, {
         name,
         number,
         email,
@@ -55,7 +56,7 @@ export default function Emp_Detail() {
 
   useEffect(() => {
     axios
-      .get(`http://localhost:9000/api/employees/${id}`)
+      .get(`${API}/${id}`)
       .then((res) => {
         // console.log(res.data);
         setEmp_data(res.data);
