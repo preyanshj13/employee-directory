@@ -157,7 +157,7 @@ export default function ViewEmp() {
                 <h5 className="card-title">
                   <Link
                     style={{ textDecoration: 'none' }}
-                    to={`/detail/${item._id}`}
+                    to={`/employee-directory/detail/${item._id}`}
                   >
                     {item.name}
                   </Link>
