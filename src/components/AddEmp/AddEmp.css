@@ -4,14 +4,32 @@
 
 .employeeForm{
     /* padding: auto; */
-    align-content: center;
-    margin-left: 33%;
+    margin-left: 15%;
 }
 
 .add {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 5%;
     /* text-align: right; */
-    margin-left: 20%;
+    /* margin-left: 20%; */
 }
 /* .row{
     align-content: center;
 } */
+
+/* For mobiles */
+@media screen and (max-width: 540px) {
+    .employeeForm {
+        width: 85%;
+        margin-left: 7%;
+    }
+}
+
+/* For Tablets */
+@media screen and (min-width: 540px) and (max-width: 780px) {
+    .employeeForm {
+        margin-left: 0%;
+        width: 95%;
+    }
+}

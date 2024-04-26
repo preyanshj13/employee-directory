@@ -20,10 +20,16 @@ body{
     text-align: center;
 }
 
+.row {
+    display: flex;
+    justify-content: space-around;
+}
+
 .card {
     /* display: flex; */
-    text-align: center;
-    margin: 10px 17px;
+    /* text-align: center; */
+    /* margin: 10px 17px; */
+    margin-bottom: 5%;
     width: 18rem;
     /* max-height: 45rem; */
 }
@@ -53,4 +59,13 @@ body{
     color: white;
     padding: 5px 10px;
     background-color: rgb(238, 6, 6);
+}
+
+
+@media screen and (max-width: 540px) {
+    .searchBox {
+        display: flex;
+        justify-content: center;
+        padding: 0%;
+    }
 }

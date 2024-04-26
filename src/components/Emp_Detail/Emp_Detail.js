@@ -11,8 +11,8 @@ export default function Emp_Detail() {
   const [address, setAddress] = useState('');
   const [domain, setDomain] = useState('');
   const [ids, setIds] = useState('');
-  const image = useState('http://dummyimage.com/100x100.png/ff4444/ffffff');
-  const API = process.env.REACT_APP_API
+  // const image = useState('http://dummyimage.com/100x100.png/ff4444/ffffff');
+  const API = process.env.REACT_APP_API;
 
   let { id } = useParams();
   // console.log(id)
@@ -22,7 +22,7 @@ export default function Emp_Detail() {
 
   const edit = (id) => {
     // e.preventDefault();
-    console.log(id)
+    console.log(id);
     axios
       .put(`${API}/${id}`, {
         name,
@@ -76,6 +76,7 @@ export default function Emp_Detail() {
   return (
     <>
       <div className="Emp_Detail">
+
         <h1 className="empName mb-5">
           <strong>{emp_data.name}</strong>
         </h1>
@@ -99,7 +100,7 @@ export default function Emp_Detail() {
         </div> */}
 
         <div className="data1">
-          <div className="details">
+          <div className="details1">
             <h5>
               <strong>Employee ID</strong> :- {ids}
             </h5>
@@ -111,7 +112,7 @@ export default function Emp_Detail() {
             </h5>
           </div>
 
-          <div className="details">
+          <div className="details2">
             <h5>
               <strong>Domain</strong> :- {emp_data.domain}
             </h5>
@@ -123,7 +124,7 @@ export default function Emp_Detail() {
             </h5>
           </div>
 
-          <div className="detail">
+          <div className="img">
             <img className="empImg mb-4" src={emp_data.image} alt="Employee" />
           </div>
         </div>
@@ -135,7 +136,7 @@ export default function Emp_Detail() {
       </div>
 
       {/* EDIT EMPLOYEE FORM */}
-      <form className="editDetails" id="editDetails" onSubmit={()=>edit(id)} >
+      <form className="editDetails" id="editDetails" onSubmit={() => edit(id)}>
         <div className="editForm">
           <div className="col1">
             <div className="row editName mb-4">
@@ -244,7 +245,7 @@ export default function Emp_Detail() {
         <div className="editButton">
           <button
             type="submit"
-            className="btn btn-primary"
+            className="btn btn-primary mb-5"
             // onClick={() => edit(id)}
           >
             Edit Employee

@@ -9,6 +9,7 @@
 
 .data1 {
     display: flex;
+    /* flex-direction: column-reverse; */
     justify-content: space-around;
 }
 
@@ -67,4 +68,44 @@ h5 {
 
 .edit {
     justify-content: center;
+}
+
+/* For Mobile */
+@media screen and (max-width: 540px) {
+    .data1 {
+        flex-direction: column-reverse;
+    }
+
+    .img{
+        order: 1;
+        align-self: center;
+    }
+
+    .details1{
+        order: 1;
+        margin-left: 12%;
+        /* align-self: center; */
+    }
+
+    .details2{
+        margin-left: 12%;
+        /* align-self: center; */
+    }
+
+    .editForm{
+        flex-direction: column;
+        /* justify-content: flex-end; */
+    }
+
+    .row{
+        width: 80%;
+        margin-left: 10%;
+    }
+}
+
+/* For Tablets */
+@media screen and (min-width: 540px) and (max-width: 780px) {
+    .data1 {
+        /* flex-direction: column-reverse; */
+    }
 }

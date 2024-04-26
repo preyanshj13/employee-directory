@@ -13,10 +13,10 @@ export default function AddEmp() {
   const [address, setAddress] = useState('');
   // const [lastName, setLastName] = useState('')
   const [domain, setDomain] = useState('');
-  const image = useState('http://dummyimage.com/100x100.png/ff4444/ffffff');
+  // const image = useState('http://dummyimage.com/100x100.png/ff4444/ffffff');
   const navigate = useNavigate();
-  
-  const API = process.env.REACT_APP_API
+
+  const API = process.env.REACT_APP_API;
 
   const postData = () => {
     if (!id || !name || !domain || !number || !email || !address) {
@@ -36,9 +36,8 @@ export default function AddEmp() {
           console.log('data posted! ', res.data);
         })
         // setTimeout(
-        .then(
-           setTimeout( navigate('/employee-directory')),20000);
-      // ,1000)
+        .then(setTimeout(navigate('/employee-directory')), 20000);
+    // ,1000)
     // <Redirect to="/" />
   };
 
@@ -55,7 +54,7 @@ export default function AddEmp() {
       <h1 className="heading mb-5 mt-5">Add New Employee</h1>
       <form className="employeeForm col-sm-8">
         <div className="row mb-4">
-          <label htmlFor="inputId" className="col-sm-2 col-form-label">
+          <label htmlFor="inputId" className="col-sm-3 col-form-label">
             <strong>Employee ID *</strong>
           </label>
           <div className="col-sm-4">
@@ -75,7 +74,7 @@ export default function AddEmp() {
 
         {/* <div className='row'> */}
         <div className="row mb-4">
-          <label htmlFor="inputName" className="col-sm-2 col-form-label">
+          <label htmlFor="inputName" className="col-sm-3 col-form-label">
             <strong>Name *</strong>
           </label>
           <div className="col-sm-4">
@@ -90,7 +89,7 @@ export default function AddEmp() {
             />
           </div>
 
-          {/* <label htmlFor="inputLastName" className="col-sm-2 col-form-label">
+          {/* <label htmlFor="inputLastName" className="col-sm-3 col-form-label">
                         Last Name*
                     </label>
                     <div className="col-sm-4">
@@ -100,7 +99,7 @@ export default function AddEmp() {
         {/* </div> */}
 
         <div className="row mb-4">
-          <label htmlFor="inputPhone" className="col-sm-2 col-form-label">
+          <label htmlFor="inputPhone" className="col-sm-3 col-form-label">
             <strong>Phone Number *</strong>
           </label>
           <div className="col-sm-4">
@@ -118,7 +117,7 @@ export default function AddEmp() {
         </div>
 
         <div className="row mb-4">
-          <label htmlFor="inputEmail" className="col-sm-2 col-form-label">
+          <label htmlFor="inputEmail" className="col-sm-3 col-form-label">
             <strong>Email ID *</strong>
           </label>
           <div className="col-sm-4">
@@ -134,7 +133,7 @@ export default function AddEmp() {
         </div>
 
         <div className="row mb-4">
-          <label htmlFor="inputDob" className="col-sm-2 col-form-label">
+          <label htmlFor="inputDob" className="col-sm-3 col-form-label">
             <strong>Date of Birth</strong>
           </label>
           <div className="col-sm-4">
@@ -149,7 +148,7 @@ export default function AddEmp() {
         </div>
 
         <div className="row mb-4">
-          <label htmlFor="inputAddress" className="col-sm-2 col-form-label">
+          <label htmlFor="inputAddress" className="col-sm-3 col-form-label">
             <strong>Address *</strong>
           </label>
           <div className="col-sm-4">
@@ -165,7 +164,7 @@ export default function AddEmp() {
         </div>
 
         <div className="row mb-4">
-          <label htmlFor="domain" className="col-sm-2 col-form-label">
+          <label htmlFor="domain" className="col-sm-3 col-form-label">
             <strong>Select Domain *</strong>
           </label>
           <div className="col-sm-4">
@@ -188,14 +187,16 @@ export default function AddEmp() {
           </div>
         </div>
 
-        <button
-          id="submit"
-          type="submit"
-          className="btn add btn-primary"
-          onClick={() => postData()}
-        >
-          Add Employee
-        </button>
+        <div className='add'>
+          <button
+            id="submit"
+            type="submit"
+            className="btn btn-primary"
+            onClick={() => postData()}
+          >
+            Add Employee
+          </button>
+        </div>
       </form>
     </>
   );
